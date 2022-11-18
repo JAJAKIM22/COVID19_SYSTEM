@@ -1,4 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import {
+    LineChart,
+    ResponsiveContainer,
+    Legend, Tooltip,
+    Line,
+    XAxis,
+    YAxis,
+    CartesianGrid
+} from 'recharts';
 
 function CovidStat() {
     const [userInput, setUserInput] = useState("");
@@ -31,6 +40,41 @@ function CovidStat() {
                 setData(data.response);
             });
     };
+
+    const pdata = [
+        {
+            name: 'MongoDb',
+            student: 11,
+            fees: 120
+        },
+        {
+            name: 'Javascript',
+            student: 15,
+            fees: 12
+        },
+        {
+            name: 'PHP',
+            student: 5,
+            fees: 10
+        },
+        {
+            name: 'Java',
+            student: 10,
+            fees: 5
+        },
+        {
+            name: 'C#',
+            student: 9,
+            fees: 4
+        },
+        {
+            name: 'C++',
+            student: 10,
+            fees: 8
+        },
+    ];
+
+
     return (
         <div className="covid">
             <h2>COVID-19 STATISTICS</h2>
@@ -84,6 +128,22 @@ function CovidStat() {
                         })}
                     </tbody>
                 </table>
+            </div>
+            <div>
+                <ResponsiveContainer width="100%" aspect={3}>
+                    <LineChart data={pdata} margin={{ right: 300 }}>
+                        <CartesianGrid />
+                        <XAxis dataKey="name"
+                            interval={'preserveStartEnd'} />
+                        <YAxis></YAxis>
+                        <Legend />
+                        <Tooltip />
+                        <Line dataKey="student"
+                            stroke="blue" activeDot={{ r: 8 }} />
+                        <Line dataKey="fees"
+                            stroke="green" activeDot={{ r: 8 }} />
+                    </LineChart>
+                </ResponsiveContainer>
             </div>
         </div>
     );
