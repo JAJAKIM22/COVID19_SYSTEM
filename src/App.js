@@ -1,3 +1,4 @@
+import React from "react";
 import CovidStat from "./CovidStat";
 function App() {
   return (
