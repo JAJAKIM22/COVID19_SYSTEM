@@ -10,17 +10,16 @@ import {
 } from 'recharts';
 
 function Chart({ data }) {
-
     return (
-        <div>
+        <div id="chart">
             <ResponsiveContainer width="100%" aspect={3}>
                 <LineChart data={data} margin={{ right: 300 }}>
-                    <CartesianGrid />
-                    <XAxis dataKey="time"
+                    <CartesianGrid stroke="black" />
+                    <XAxis dataKey="time"  tick={{ fill: 'black' }}
                         interval={'preserveStartEnd'} />
-                    <YAxis></YAxis>
+                    <YAxis tick={{ fill: 'black' }}></YAxis>
                     <Legend />
-                    <Tooltip />
+                    <Tooltip  />
                     <Line dataKey="cases.total" name="CASES"
                         stroke="blue" activeDot={{ r: 8 }} />
                     <Line dataKey="deaths.total" name="DEATHS"
