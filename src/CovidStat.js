@@ -48,7 +48,7 @@ function CovidStat() {
                         <input type="date" onChange={handleDate} />
                         <br />
                     </div>
-                    <button type="submit" class="btn btn-outline-success">Search me</button>
+                    <button type="submit" class="btn btn-outline-success">Search</button>
                 </form>
                 <br />
             </div>
